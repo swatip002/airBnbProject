@@ -14,7 +14,6 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "hotel")
 public class Booking {
 
     @Id
@@ -56,7 +55,7 @@ public class Booking {
     @Column(nullable = false)
     private BookingStatus bookingStatus;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "booking_guest",
             joinColumns = @JoinColumn(name = "booking_id"),

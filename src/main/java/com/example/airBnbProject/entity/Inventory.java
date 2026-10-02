@@ -1,8 +1,7 @@
 package com.example.airBnbProject.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,6 +14,9 @@ import java.time.LocalDate;
         columnNames = {"hotel_id","room_id", "date"}
 
 ))
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Inventory {
 
     @Id
