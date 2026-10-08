@@ -2,11 +2,11 @@ package com.example.airBnbProject.entity;
 
 import com.example.airBnbProject.entity.enums.BookingStatus;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -14,6 +14,9 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Booking {
 
     @Id
@@ -63,4 +66,6 @@ public class Booking {
     )
     private Set<Guest> guests;
 
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal amount;
 }
